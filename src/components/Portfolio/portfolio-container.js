@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from 'axios';
 
 import PortfolioItem from "./portfolio-item";
 
@@ -7,40 +8,65 @@ export default class PortfolioContainer extends Component {
         super();
 
         this.state = {
-            pageTitle: "Welcome to my portfolio",
-            data: [
-                { title: "Deviantart" },
-                { title: "Linkedin" },
-                { title: "Smule" },
-                { title: "YouTube" }
-            ]
+            pageTitle: "Welcome to MidnightVixen's Portfolio",
+            isLoading: false,
+            data: []
         };
 
-        this.handlePageTitleUpdate = this.handlePageTitleUpdate.bind(this);
+        this.handleFilter=this.handleFilter.bind(this);
     }
+
+    handleFilter(filter) {
+        this.setState({
+            data: this.state.data.filter(item => {
+                return item.category === filter;
+            })
+        })
+    }
+
+    getPortfolioItems() {
+        axios.get('https://lynellsinger.devcamp.space/portfolio/portfolio_items')
+      .then (response => {
+        console.log(response);
+        this.setState({
+            data: response.data.portfolio_items
+        })
+      })
+      .catch(error => {
+        console.log(error);
+      })
+      .then(function () {
+      });
+      }
 
     portfolioItems() {
         return this.state.data.map(item => {
-            return <PortfolioItem title={item.title} url={"google.com"} />;
+            return <PortfolioItem key={item.id} item ={item}/>;
         })
     }
 
-    handlePageTitleUpdate() {
-        this.setState({
-            pageTitle: "MidnightVixen Greets You"
-        })
+    componentDidMount() {
+        this.getPortfolioItems();
     }
 
     render () {
+        if (this.state.isLoading) {
+            return <div>Loading...</div>;
+        }
+
         return (
             <div>
                 <h2>{this.state.pageTitle}</h2>
 
-                {this.portfolioItems()}
+                <button onClick={() => this.handleFilter('art')}>Art</button>
+                <button onClick={() => this.handleFilter('networking')}>Networking</button>
+                <button onClick={() => this.handleFilter('music')}>Music</button>
+                <button onClick={() => this.handleFilter('entertainment')}>Entertainment</button>
+                
+                <div className="portfolio-items-wrapper">
+                    {this.portfolioItems()}
+                </div>
 
-                <hr/>
-
-                <button onClick={this.handlePageTitleUpdate}>Change Title</button>
             </div>
         )
     }
