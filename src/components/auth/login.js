@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import axios from 'axios';
+import { response } from "express";
 
 export default class Login extends Component {
     constructor(props) {
@@ -20,7 +22,17 @@ export default class Login extends Component {
     }
     
     handleSubmit(event) {
-        console.log("Handle submit", event);
+        axios.post("https://api.devcamp.space/sessions", {
+            client: {
+                email: this.state.email,
+                password: this.state.password
+            }
+        },
+        { withCredentials: true }
+        ).then(response => {
+            console.log("response", response);
+        })
+        event.preventDefault();
     }
 
     render() {
