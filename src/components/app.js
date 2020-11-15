@@ -13,6 +13,7 @@ import About from "./Pages/about";
 import Contact from "./Pages/contact";
 import Blog from "./Pages/blog";
 import PortfolioDetail from "./Portfolio/portfolio-detail";
+import Auth from "./Pages/auth";
 import NoMatch from "./Pages/no-match";
 
 export default class App extends Component {
@@ -31,6 +32,7 @@ export default class App extends Component {
           <Switch>
             <Route exact path="/" component ={Home} />
             <Route path="/about-me" component ={About} />
+            <Route path="/auth" component ={Auth} />
             <Route path="/contact-me" component ={Contact} />
             <Route path="/blog" component ={Blog} />
             <Route exact path="/portfolio/:slug" component ={PortfolioDetail} />
