@@ -79,7 +79,7 @@ export default class App extends Component {
         <Router>
           <div>
 
-          <NavigationContainer/>
+          <NavigationContainer loggedInStatus={this.state.loggedInStatus} />
 
           <h2>{this.state.loggedInStatus}</h2>
 
