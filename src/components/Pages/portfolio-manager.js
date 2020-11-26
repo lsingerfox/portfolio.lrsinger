@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import PortfolioSidebarList from "../Portfolio/portfolio-sidebar-list";
+
 export default class PortfolioManager extends Component {
     constructor() {
         super()
@@ -34,7 +36,7 @@ export default class PortfolioManager extends Component {
                 </div>
 
                 <div className="right-column">
-                    <h1>Portfolio Sidebar...</h1>
+                    <PortfolioSidebarList data={this.state.portfolioItems}/>
                 </div>
             </div>
         )
