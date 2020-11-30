@@ -18,10 +18,7 @@ export default class PortfolioForm extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-<<<<<<< HEAD
-=======
         this.buildForm = this.buildForm.bind(this);
->>>>>>> 2b6cc072ccd03468d4e5bc2afb1bd20017a11ecd
     }
 
     buildForm() {
@@ -43,8 +40,6 @@ export default class PortfolioForm extends Component {
     }
 
     handleSubmit(event) {
-<<<<<<< HEAD
-=======
         axios.post("https://lynellsinger.devcamp.space/portfolio/portfolio_items", this.buildForm(), {withCredentials: true} )
         .then(response => {
              console.log("response", response);
@@ -52,7 +47,6 @@ export default class PortfolioForm extends Component {
              console.log("portfolio form handleSubmit error", error);
         })
         
->>>>>>> 2b6cc072ccd03468d4e5bc2afb1bd20017a11ecd
         this.buildForm();
         event.preventDefault();
     }
