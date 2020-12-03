@@ -225,7 +225,9 @@ export default class PortfolioForm extends Component {
                     <div className="image-uploaders three-column">
 
                         {this.state.thumb_image && this.state.editMode ? (
-                            <img src={this.state.thumb_image} />
+                            <div className="portfolio-manager-image-wrapper">
+                                <img src={this.state.thumb_image} />
+                            </div>
                             ) : ( 
                         
                         <DropzoneCompnent
@@ -240,6 +242,11 @@ export default class PortfolioForm extends Component {
                         </DropzoneCompnent>
                         )}
 
+                        {this.state.banner_image && this.state.editMode ? (
+                            <div className="portfolio-manager-image-wrapper">
+                                <img src={this.state.banner_image} />
+                             </div>
+                        ) : (
                         <DropzoneCompnent
                             ref={this.bannerRef}
                             config={this.componentConfig()}
@@ -250,7 +257,13 @@ export default class PortfolioForm extends Component {
                                 Banner
                             </div>
                         </DropzoneCompnent>
+                        )}
 
+                        {this.state.logo && this.state.editMode ? (
+                            <div className="portfolio-manager-image-wrapper">
+                                <img src={this.state.logo} />
+                            </div>
+                        ) : (
                         <DropzoneCompnent
                             ref={this.logoRef}
                             config={this.componentConfig()}
@@ -261,6 +274,8 @@ export default class PortfolioForm extends Component {
                                 Logo
                             </div>
                         </DropzoneCompnent>
+                        )}
+
                     </div>
 
                     <div>
