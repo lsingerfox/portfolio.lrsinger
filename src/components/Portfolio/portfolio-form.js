@@ -17,7 +17,10 @@ export default class PortfolioForm extends Component {
             url: "",
             thumb_image: "",
             banner_image: "",
-            logo: ""
+            logo: "",
+            editMode: false,
+            apiURL: "https://lynellsinger.devcamp.space/portfolio/portfolio_items",
+            apiAction: 'post'
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -55,7 +58,10 @@ export default class PortfolioForm extends Component {
                 description: description || "",
                 category: category || "Art",
                 position: position || "",
-                url: url || ""
+                url: url || "",
+                editMode: true,
+                apiURL: `https://lynellsinger.devcamp.space/portfolio/portfolio_items/${id}`,
+                apiAction: "patch"
             })
         }
     }
@@ -124,7 +130,12 @@ export default class PortfolioForm extends Component {
     }
 
     handleSubmit(event) {
-        axios.post("https://lynellsinger.devcamp.space/portfolio/portfolio_items", this.buildForm(), {withCredentials: true} )
+        axios({
+            method: this.state.apiAction,
+            url: this.state.apiURL,
+            data: this.buildForm(),
+            withCredentials: true
+        })
         .then(response => {
             this.props.handleSuccessfulFormSubmission(response.data.portfolio_item)
 
