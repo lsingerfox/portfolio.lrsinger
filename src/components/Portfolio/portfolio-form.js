@@ -4,6 +4,7 @@ import DropzoneCompnent from "react-dropzone-component";
 
 import "../../../node_modules/react-dropzone-component/styles/filepicker.css";
 import "../../../node_modules/dropzone/dist/min/dropzone.min.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class PortfolioForm extends Component {
     constructor(props) {
@@ -30,10 +31,15 @@ export default class PortfolioForm extends Component {
         this.handleThumbDrop = this.handleThumbDrop.bind(this);
         this.handleBannerDrop = this.handleBannerDrop.bind(this);
         this.handleLogoDrop = this.handleLogoDrop.bind(this);
+        this.deleteImage = this.deleteImage.bind(this);
 
         this.thumbRef = React.createRef();
         this.bannerRef = React.createRef();
         this.logoRef = React.createRef();
+    }
+
+    deleteImage(imageType) {
+        console.log("deleteImage", imageType)
     }
 
     componentDidUpdate() {
@@ -62,9 +68,9 @@ export default class PortfolioForm extends Component {
                 editMode: true,
                 apiURL: `https://lynellsinger.devcamp.space/portfolio/portfolio_items/${id}`,
                 apiAction: "patch",
-                thumb_image: thumb_image_url || "",
-                banner_image: banner_image_url || "",
-                logo: logo_url || ""
+                thumb_image_url: thumb_image_url || "",
+                banner_image_url: banner_image_url || "",
+                logo_url: logo_url || ""
             })
         }
     }
@@ -224,9 +230,15 @@ export default class PortfolioForm extends Component {
 
                     <div className="image-uploaders three-column">
 
-                        {this.state.thumb_image && this.state.editMode ? (
+                        {this.state.thumb_image_url && this.state.editMode ? (
                             <div className="portfolio-manager-image-wrapper">
                                 <img src={this.state.thumb_image} />
+
+                                <div className="image-removal-link">
+                                    <a onClick={() => this.deleteImage("thumb_image")}>
+                                        <FontAwesomeIcon icon="times-circle" />
+                                    </a>
+                                </div>
                             </div>
                             ) : ( 
                         
@@ -242,9 +254,15 @@ export default class PortfolioForm extends Component {
                         </DropzoneCompnent>
                         )}
 
-                        {this.state.banner_image && this.state.editMode ? (
+                        {this.state.banner_image_url && this.state.editMode ? (
                             <div className="portfolio-manager-image-wrapper">
                                 <img src={this.state.banner_image} />
+
+                                <div className="image-removal-link">
+                                    <a onClick={() => this.deleteImage("banner_image")}>
+                                        <FontAwesomeIcon icon="times-circle" />
+                                    </a>
+                                </div>
                              </div>
                         ) : (
                         <DropzoneCompnent
@@ -259,9 +277,15 @@ export default class PortfolioForm extends Component {
                         </DropzoneCompnent>
                         )}
 
-                        {this.state.logo && this.state.editMode ? (
+                        {this.state.logo_url && this.state.editMode ? (
                             <div className="portfolio-manager-image-wrapper">
                                 <img src={this.state.logo} />
+
+                                <div className="image-removal-link">
+                                    <a onClick={() => this.deleteImage("logo")}>
+                                        <FontAwesomeIcon icon="times-circle" />
+                                    </a>
+                                </div>
                             </div>
                         ) : (
                         <DropzoneCompnent
