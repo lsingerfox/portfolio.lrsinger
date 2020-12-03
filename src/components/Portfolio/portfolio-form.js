@@ -61,7 +61,10 @@ export default class PortfolioForm extends Component {
                 url: url || "",
                 editMode: true,
                 apiURL: `https://lynellsinger.devcamp.space/portfolio/portfolio_items/${id}`,
-                apiAction: "patch"
+                apiAction: "patch",
+                thumb_image: thumb_image_url || "",
+                banner_image: banner_image_url || "",
+                logo: logo_url || ""
             })
         }
     }
@@ -220,6 +223,11 @@ export default class PortfolioForm extends Component {
                     </div>
 
                     <div className="image-uploaders three-column">
+
+                        {this.state.thumb_image && this.state.editMode ? (
+                            <img src={this.state.thumb_image} />
+                            ) : ( 
+                        
                         <DropzoneCompnent
                             ref={this.thumbRef}
                             config={this.componentConfig()}
@@ -230,6 +238,7 @@ export default class PortfolioForm extends Component {
                                 Thumbnail
                             </div>
                         </DropzoneCompnent>
+                        )}
 
                         <DropzoneCompnent
                             ref={this.bannerRef}
