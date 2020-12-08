@@ -7,11 +7,11 @@
         a {
             margin-left: 10px;
             cursor: pointer;
-            color: $teal;
+            color: $purple;
             transition: 0.5s ease-in-out;
 
             &:hover {
-                color: $dark-teal;
+                color: $dark-purple;
             }
         }
     }
@@ -42,6 +42,7 @@
 
         .nav-link-active {
             border-bottom: 1px solid black;
+            padding-bottom: 6px;
             color: black;
         }
     }
