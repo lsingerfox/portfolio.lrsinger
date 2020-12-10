@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from 'axios';
 
 import BlogItem from "../Blog/blog-item";
+import BlogModal from "../modals/blog-modal";
 
 class Blog extends Component {
     constructor () {
@@ -63,7 +64,7 @@ class Blog extends Component {
         })
         return (
             <div className="blog-container">
-
+                <BlogModal />
                 <div className="content-container">
                     {blogRecords}
                 </div>
