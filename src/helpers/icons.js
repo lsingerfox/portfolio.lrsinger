@@ -5,7 +5,10 @@ import {
     faEdit, 
     faTimesCircle, 
     faCompactDisc, 
-    faPlusCircle 
+    faPlusCircle,
+    faMobileAlt,
+    faEnvelope,
+    faMapMarkedAlt 
 } from "@fortawesome/free-solid-svg-icons";
 
 const Icons = () => {
@@ -15,7 +18,10 @@ const Icons = () => {
         faEdit, 
         faTimesCircle, 
         faCompactDisc, 
-        faPlusCircle);
+        faPlusCircle,
+        faMobileAlt,
+        faEnvelope,
+        faMapMarkedAlt);
 };
 
 export default Icons;
