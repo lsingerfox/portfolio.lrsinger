@@ -16,7 +16,7 @@ import Contact from "./pages/contact";
 import Blog from "./pages/blog";
 import BlogDetail from "./pages/blog-detail"
 import PortfolioManager from "./pages/portfolio-manager";
-import PortfolioDetail from "./portfolio/portfolio-detail";
+import PortfolioDetail from "./portfolioo/portfolio-detail";
 import Auth from "./pages/auth";
 import NoMatch from "./pages/no-match";
 import Icons from "../helpers/icons";
