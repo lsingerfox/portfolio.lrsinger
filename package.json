@@ -6,7 +6,7 @@
     "node": "11.0.0"
   },
   "scripts": {
-    "postinstall": "cp env.example.js env.js",
+    "preinstall": "npm set audit false",
     "start": "webpack-dev-server --config webpack/dev.config.js --watch",
     "build": "cross-env NODE_ENV=production webpack --config webpack/prod.config.js --progress --display-error-details --color",
     "heroku-postbuild": "npm run build",
