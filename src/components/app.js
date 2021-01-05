@@ -9,7 +9,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 //Imported from own file
-import NavigationContainer from './navigationtest/navigation-container';
+import NavigationContainer from './navigation/navigation-container';
 import Home from "./pages/home";
 import About from "./pages/about";
 import Contact from "./pages/contact";
