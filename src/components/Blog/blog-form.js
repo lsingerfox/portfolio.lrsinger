@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import DropzoneComponent from "react-dropzone-component";
 
-import RichTextEditor from '../Forms/rich-text-editor';
+import RichTextEditor from '../forms/rich-text-editor';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 

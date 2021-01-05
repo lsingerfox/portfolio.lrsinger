@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-import PortfolioSidebarList from "../Portfolio/portfolio-sidebar-list";
-import PortfolioForm from "../Portfolio/portfolio-form";
+import PortfolioSidebarList from "../portfolio/portfolio-sidebar-list";
+import PortfolioForm from "../portfolio/portfolio-form";
 
 export default class PortfolioManager extends Component {
     constructor() {
