@@ -6,8 +6,7 @@
     "node": "11.0.0"
   },
   "scripts": {
-    "preinstall": "npm set audit false",
-    "postinstall": "^0.7.0",
+    "postinstall": "cp env.example.js env.js",
     "start": "webpack-dev-server --config webpack/dev.config.js --watch",
     "build": "cross-env NODE_ENV=production webpack --config webpack/prod.config.js --progress --display-error-details --color",
     "heroku-postbuild": "npm run build",
@@ -70,6 +69,7 @@
     "moment": "^2.29.0",
     "node-sass": "^4.13.1",
     "postcss-loader": "^2.1.6",
+    "postinstall": "^0.7.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-draft-wysiwyg": "^1.14.5",
