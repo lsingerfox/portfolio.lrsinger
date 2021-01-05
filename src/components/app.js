@@ -10,15 +10,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 //Imported from own file
 import NavigationContainer from './navigation/navigation-container';
-import Home from "./pagestest/home";
-import About from "./pagestest/about";
-import Contact from "./pagestest/contact";
-import Blog from "./pagestest/blog";
-import BlogDetail from "./pagestest/blog-detail"
-import PortfolioManager from "./pagestest/portfolio-manager";
+import Home from "./pages/home";
+import About from "./pages/about";
+import Contact from "./pages/contact";
+import Blog from "./pages/blog";
+import BlogDetail from "./pages/blog-detail"
+import PortfolioManager from "./pages/portfolio-manager";
 import PortfolioDetail from "./portfolio/portfolio-detail";
-import Auth from "./pagestest/auth";
-import NoMatch from "./pagestest/no-match";
+import Auth from "./pages/auth";
+import NoMatch from "./pages/no-match";
 import Icons from "../helpers/icons";
 
 
