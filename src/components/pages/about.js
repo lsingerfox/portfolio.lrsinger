@@ -17,19 +17,22 @@ export default function() {
                 <div className='title'>
                     Profile
                 </div>
+                <br></br>
                 <div className='profile'>
                     A driven Front-End Web Developer interested in applying critical thinking and problem-solving skills to a work 
                     environment that challenges growth in coding languages and creative skills. The experience presented shows an 
                     ability to manage time between multiple tasks and multiple opportunities to raise diversity and disability 
                     awareness. Additionally, the education provided shows a diverse array of subjects learned.
                 </div>
+                <br></br>
                 <div className='title'>
                     Relevant Skills
                 </div>
+                <br></br>
                 <div className='one-column'>
                     <ul>
                         <li>Soft Skills:</li>
-                        <div className='two-colums'>
+                        <div className='two-columns'>
                             <li>Critical thinking</li>
                             <li>Willingness to learn</li>
                             <li>Self-Leadership</li>

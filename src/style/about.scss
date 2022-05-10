@@ -1,0 +1,25 @@
+.content-page-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .left-column {
+        position: relative;
+    }
+    .right-column {
+        display: flex;
+        text-align: justify;
+        .title {
+            font-size: 1.4em;
+            font-weight: 600;
+            text-align: left;
+        }
+        .one-column{
+            .two-columns {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 60px;
+                list-style-type: circle;
+                margin-left: 20px;
+            }
+        }
+    }
+}
