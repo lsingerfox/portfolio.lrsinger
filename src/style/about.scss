@@ -2,11 +2,17 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     .left-column {
-        position: relative;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        box-sizing: border-box;
     }
     .right-column {
         display: flex;
         text-align: justify;
+        height: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: none;
         .title {
             font-size: 1.4em;
             font-weight: 600;
@@ -17,6 +23,14 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-column-gap: 60px;
+                list-style-type: circle;
+                margin-left: 20px;
+                a {
+                    text-decoration: none;
+                    color: blue;
+                }
+            }
+            .one-column-indent {
                 list-style-type: circle;
                 margin-left: 20px;
             }

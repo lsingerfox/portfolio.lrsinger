@@ -2,6 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import profilePicture from '../../../static/assets/images/bio/headshot.png';
 
+import Profile from '../about-info/about-profile';
+import Skills from '../about-info/about-skills';
+import Projects from '../about-info/about-projects';
+import Work from '../about-info/about-work';
+import Education from '../about-info/about-education';
+import Hobbies from '../about-info/about-hobbies';
+
 export default function() {
     return (
         <div className="content-page-wrapper">
@@ -10,66 +17,51 @@ export default function() {
                 style={{
                     background: "url(" + profilePicture + ") no-repeat",
                     backgroundSize: "cover",
-                    backgroundPosition:"center"
+                    backgroundPosition:"center",
                 }}
             />
             <div className="right-column">
                 <div className='title'>
                     Profile
                 </div>
-                <br></br>
-                <div className='profile'>
-                    A driven Front-End Web Developer interested in applying critical thinking and problem-solving skills to a work 
-                    environment that challenges growth in coding languages and creative skills. The experience presented shows an 
-                    ability to manage time between multiple tasks and multiple opportunities to raise diversity and disability 
-                    awareness. Additionally, the education provided shows a diverse array of subjects learned.
+                <br/>
+                <div className='one-column'>
+                    <Profile />
                 </div>
-                <br></br>
+                <br/>
                 <div className='title'>
                     Relevant Skills
                 </div>
-                <br></br>
+                <br/>
+                <div className='two-columns'>
+                    <Skills />
+                </div>
+                <br/>
+                <div className='title'>
+                    Projects
+                </div>
+                <br/>
                 <div className='one-column'>
-                    <ul>
-                        <li>Soft Skills:</li>
-                        <div className='two-columns'>
-                            <li>Critical thinking</li>
-                            <li>Willingness to learn</li>
-                            <li>Self-Leadership</li>
-                            <li>Self-Assessment</li>
-                            <li>Friendliness</li>
-                            <li>Empathy</li>
-                            <li>Problem-Solving</li>
-                            <li>Time Management</li>
-                            <li>Artistic Sense</li>
-                            <li>Business Etiquette</li>
-                            <li>Diversity Awareness</li>
-                            <li>Disability Awareness</li>
-                            <li>Customer Service</li>
-                            <li>Ability to work in a team</li>
-                        </div>
-                    </ul>
+                    <Projects />
+                </div>
+                <div className='title'>
+                    Work Experience
+                </div>
+                <br/>
+                <div className='one-column'>
+                    <Work />
+                </div>
+                <div className='title'>
+                    Education
                 </div>
                 <div className='one-column'>
-                    <ul>
-                        <li>Technical Skills:</li>
-                        <div className='two-columns'>
-                            <li>JavaScript</li>
-                            <li>ReactJS</li>
-                            <li>Python 3</li>
-                            <li>UML</li>
-                            <li>HTML5</li>
-                            <li>CSS</li>
-                            <li>Flask</li>
-                            <li>JSON</li>
-                            <li>Git</li>
-                            <li>MongoDB</li>
-                            <li>SQL Databases</li>
-                            <li>SCSS/SASS</li>
-                            <li>Flexbox</li>
-                            <li>CSS Grid</li>
-                        </div> 
-                    </ul>
+                    <Education />
+                </div>
+                <div className='title'>
+                    Hobbies
+                </div>
+                <div className='one-column'>
+                    <Hobbies />
                 </div>
             </div>
         </div>
